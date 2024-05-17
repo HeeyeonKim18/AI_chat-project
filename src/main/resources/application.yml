@@ -1,0 +1,67 @@
+# DB source
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/baofamily?serverTimezone=Asia/Seoul&useSSL=false
+    username: localhost
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# test DB
+#spring:
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/ten039
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+
+# jpa setting
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQLDialect
+    database: mysql
+    generate-ddl: true
+
+# swagger setting
+springdoc:
+  packages-to-scan: beside2.ten039.controller
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    path: /
+    disable-swagger-default-url: true
+    display-request-duration: true
+    operations-sorter: alpha
+
+
+oauth2:
+  kakao:
+    client-id:
+    client-secret:
+    redirect-uri:
+
+    provider:
+      kakao:
+        token-uri:
+        user-info-uri:
+
+jwt:
+  issuer:
+  secret:
+
+clova:
+  learning:
+    url: https://clovastudio.apigw.ntruss.com/tuning/v2/tasks
+    access-key:
+    signature:
+    file-path: /Users/heeyeon/Downloads/beside/potenday/312/ai/chatSentence.csv
+  chat:
+    api-url: https://clovastudio.stream.ntruss.com/testapp/v1/chat-completions/HCX-002
+    secret: s14CSix9qRAJcOFavwzFxB88Qie0ImqtOzHdXIDx
+    api-key: NTA0MjU2MWZlZTcxNDJiY0XzuOfaY4hoFijCQ+zULWaPDRR/7IT15V6DFqstIlpbX3GNHDhBEWIZ/5XQ08dS9oJEiSscBzT3f4+0WWtr/mFHt2vQKmkSudgRuQS2gcny9yf2ShNtV28ZTevtXru9BL12E+wusmP/ms3RXd3ft6lAyU5KtxnISQ5x+WInS60AlN5Fpc1en0CbQFkNUGbF/hWQf7yg8xDWs4EkF3SKoqY=
+    request-id: 6ca50968e80e4d8f944878816f141e0d
+
